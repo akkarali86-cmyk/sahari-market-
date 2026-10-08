@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="theme-color" content="#6C5CE7">
+  <meta name="description" content="سوق الصحاري - كل ما تحتاجه، قريب منك.">
+
+  <title>Sahari Market | سوق الصحاري</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- =========================
+       APP
+  ========================== -->
+
+  <div id="app">
+
+    <!-- HEADER -->
+    <header class="top-header">
+
+      <div class="brand">
+        <div class="brand-icon">🛍️</div>
+
+        <div>
+          <h1>Sahari Market</h1>
+          <span>سوق الصحاري</span>
+        </div>
+      </div>
+
+      <button class="icon-btn" id="notificationBtn">
+        🔔
+      </button>
+
+    </header>
+
+
+    <!-- LOCATION -->
+    <section class="location-bar">
+
+      <span>📍</span>
+
+      <div>
+        <small>موقعك الحالي</small>
+        <strong>حد الصحاري، الجلفة</strong>
+      </div>
+
+      <button id="changeLocationBtn">
+        تغيير
+      </button>
+
+    </section>
+
+
+    <!-- SEARCH -->
+    <section class="search-section">
+
+      <div class="search-box">
+
+        <span>🔎</span>
+
+        <input
+          id="searchInput"
+          type="search"
+          placeholder="ماذا تبحث عنه؟"
+          autocomplete="off"
+        >
+
+      </div>
+
+    </section>
+
+
+    <!-- MAIN CONTENT -->
+    <main id="mainContent">
+
+      <!-- HERO -->
+      <section class="hero">
+
+        <div class="hero-content">
+
+          <span class="hero-badge">
+            🇩🇿 منصة محلية
+          </span>
+
+          <h2>
+            كل ما تحتاجه،
+            <br>
+            <span>قريب منك.</span>
+          </h2>
+
+          <p>
+            اكتشف المنتجات والمحلات والخدمات القريبة منك بسهولة.
+          </p>
+
+          <button class="hero-btn" id="exploreBtn">
+            ابدأ الاستكشاف
+            <span>←</span>
+          </button>
+
+        </div>
+
+        <div class="hero-emoji">
+          🛍️
+        </div>
+
+      </section>
+
+
+      <!-- CATEGORIES -->
+      <section class="section">
+
+        <div class="section-header">
+
+          <h2>التصنيفات</h2>
+
+          <button id="allCategoriesBtn">
+            عرض الكل
+          </button>
+
+        </div>
+
+        <div class="categories" id="categoriesContainer">
+
+          <button class="category-card" data-category="shopping">
+            <div>🛍️</div>
+            <span>تسوق</span>
+          </button>
+
+          <button class="category-card" data-category="food">
+            <div>🍔</div>
+            <span>مطاعم</span>
+          </button>
+
+          <button class="category-card" data-category="services">
+            <div>🔧</div>
+            <span>خدمات</span>
+          </button>
+
+          <button class="category-card" data-category="transport">
+            <div>🚕</div>
+            <span>نقل</span>
+          </button>
+
+          <button class="category-card" data-category="home">
+            <div>🏠</div>
+            <span>المنزل</span>
+          </button>
+
+          <button class="category-card" data-category="beauty">
+            <div>💇</div>
+            <span>الجمال</span>
+          </button>
+
+          <button class="category-card" data-category="education">
+            <div>🎓</div>
+            <span>تعليم</span>
+          </button>
+
+          <button class="category-card" data-category="cars">
+            <div>🚗</div>
+            <span>سيارات</span>
+          </button>
+
+        </div>
+
+      </section>
+
+
+      <!-- QUICK ACTIONS -->
+      <section class="section">
+
+        <div class="section-header">
+
+          <h2>ماذا تريد أن تفعل؟</h2>
+
+        </div>
+
+        <div class="quick-actions">
+
+          <button class="action-card" id="buyerBtn">
+
+            <div class="action-icon buyer-icon">
+              🛍️
+            </div>
+
+            <div>
+              <strong>أبحث عن شيء</strong>
+              <span>منتجات ومحلات وخدمات</span>
+            </div>
+
+            <b>←</b>
+
+          </button>
+
+
+          <button class="action-card" id="sellerBtn">
+
+            <div class="action-icon seller-icon">
+              🏪
+            </div>
+
+            <div>
+              <strong>افتح نشاطك</strong>
+              <span>متجر أو خدمة أو مشروع</span>
+            </div>
+
+            <b>←</b>
+
+          </button>
+
+        </div>
+
+      </section>
+
+
+      <!-- NEARBY -->
+      <section class="section">
+
+        <div class="section-header">
+
+          <h2>قريب منك</h2>
+
+          <button id="nearbyBtn">
+            عرض الكل
+          </button>
+
+        </div>
+
+        <div class="business-list" id="businessList">
+
+          <article class="business-card">
+
+            <div class="business-image">
+              👕
+            </div>
+
+            <div class="business-info">
+
+              <div class="verified-row">
+
+                <h3>متجر الأناقة</h3>
+
+                <span class="verified">
+                  ✓
+                </span>
+
+              </div>
+
+              <p>ملابس وأزياء</p>
+
+              <div class="business-meta">
+                ⭐ 4.8
+                <span>•</span>
+                📍 0.8 كم
+              </div>
+
+            </div>
+
+            <button class="favorite-btn">
+              ♡
+            </button>
+
+          </article>
+
+
+          <article class="business-card">
+
+            <div class="business-image">
+              🍔
+            </div>
+
+            <div class="business-info">
+
+              <div class="verified-row">
+
+                <h3>مطعم الصحاري</h3>
+
+                <span class="verified">
+                  ✓
+                </span>
+
+              </div>
+
+              <p>مطاعم ووجبات سريعة</p>
+
+              <div class="business-meta">
+                ⭐ 4.7
+                <span>•</span>
+                📍 1.2 كم
+              </div>
+
+            </div>
+
+            <button class="favorite-btn">
+              ♡
+            </button>
+
+          </article>
+
+
+          <article class="business-card">
+
+            <div class="business-image">
+              🔧
+            </div>
+
+            <div class="business-info">
+
+              <div class="verified-row">
+
+                <h3>خدمات الصيانة</h3>
+
+                <span class="verified">
+                  ✓
+                </span>
+
+              </div>
+
+              <p>صيانة وإصلاح</p>
+
+              <div class="business-meta">
+                ⭐ 4.9
+                <span>•</span>
+                📍 1.6 كم
+              </div>
+
+            </div>
+
+            <button class="favorite-btn">
+              ♡
+            </button>
+
+          </article>
+
+        </div>
+
+      </section>
+
+
+      <!-- POSTS -->
+      <section class="section">
+
+        <div class="section-header">
+
+          <h2>آخر المنشورات</h2>
+
+          <button id="postsBtn">
+            عرض الكل
+          </button>
+
+        </div>
+
+        <div class="posts-container">
+
+          <article class="post-card">
+
+            <div class="post-header">
+
+              <div class="post-avatar">
+                👕
+              </div>
+
+              <div>
+                <strong>متجر الأناقة</strong>
+                <small>منذ ساعتين</small>
+              </div>
+
+            </div>
+
+            <div class="post-content">
+
+              <h3>
+                وصلتنا تشكيلة جديدة 🔥
+              </h3>
+
+              <p>
+                اكتشف أحدث الملابس والأزياء بأسعار مناسبة.
+              </p>
+
+            </div>
+
+            <div class="post-actions">
+
+              <button>♡ إعجاب</button>
+              <button>💬 تعليق</button>
+              <button>↗ مشاركة</button>
+
+            </div>
+
+          </article>
+
+
+          <article class="post-card">
+
+            <div class="post-header">
+
+              <div class="post-avatar">
+                🍔
+              </div>
+
+              <div>
+                <strong>مطعم الصحاري</strong>
+                <small>منذ 4 ساعات</small>
+              </div>
+
+            </div>
+
+            <div class="post-content">
+
+              <h3>
+                عرض اليوم 🔥
+              </h3>
+
+              <p>
+                وجبة خاصة اليوم بسعر مميز.
+              </p>
+
+            </div>
+
+            <div class="post-actions">
+
+              <button>♡ إعجاب</button>
+              <button>💬 تعليق</button>
+              <button>↗ مشاركة</button>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </section>
+
+    </main>
+
+
+    <!-- BOTTOM NAVIGATION -->
+    <nav class="bottom-nav">
+
+      <button class="nav-item active" data-page="home">
+
+        <span>⌂</span>
+        <small>الرئيسية</small>
+
+      </button>
+
+      <button class="nav-item" data-page="search">
+
+        <span>🔎</span>
+        <small>بحث</small>
+
+      </button>
+
+      <button class="nav-item create-btn" data-page="create">
+
+        <span>＋</span>
+
+      </button>
+
+      <button class="nav-item" data-page="favorites">
+
+        <span>♡</span>
+        <small>المفضلة</small>
+
+      </button>
+
+      <button class="nav-item" data-page="profile">
+
+        <span>👤</span>
+        <small>حسابي</small>
+
+      </button>
+
+    </nav>
+
+
+    <!-- MODAL -->
+    <div class="modal" id="modal">
+
+      <div class="modal-overlay" id="modalOverlay"></div>
+
+      <div class="modal-content">
+
+        <button class="close-modal" id="closeModal">
+          ×
+        </button>
+
+        <div id="modalBody"></div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- JAVASCRIPT -->
+
+  <script src="app.js"></script>
+
+</body>
+</html>
