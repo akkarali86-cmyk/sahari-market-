@@ -14,77 +14,86 @@
 
 <body>
 
-  <!-- =========================
-       APP
-  ========================== -->
-
   <div id="app">
 
-    <!-- HEADER -->
-    <header class="top-header">
+    <!-- ================= HEADER ================= -->
+    <header class="app-header">
 
-      <div class="brand">
+      <div class="brand-area">
         <div class="brand-icon">🛍️</div>
 
         <div>
           <h1>Sahari Market</h1>
-          <span>سوق الصحاري</span>
+          <p>سوق الصحاري</p>
         </div>
       </div>
 
-      <button class="icon-btn" id="notificationBtn">
+      <button
+        class="icon-button"
+        id="notificationBtn"
+        onclick="showNotifications()"
+        aria-label="الإشعارات">
         🔔
       </button>
 
     </header>
 
 
-    <!-- LOCATION -->
-    <section class="location-bar">
+    <!-- ================= LOCATION ================= -->
+    <section class="location-bar" onclick="openLocationSelector()">
 
-      <span>📍</span>
+      <div class="location-icon">📍</div>
 
-      <div>
-        <small>موقعك الحالي</small>
-        <strong>حد الصحاري، الجلفة</strong>
+      <div class="location-info">
+        <span>موقعك الحالي</span>
+        <strong id="currentLocation">
+          حد الصحاري، الجلفة
+        </strong>
       </div>
 
-      <button id="changeLocationBtn">
-        تغيير
-      </button>
+      <div class="location-arrow">⌄</div>
 
     </section>
 
 
-    <!-- SEARCH -->
+    <!-- ================= SEARCH ================= -->
     <section class="search-section">
 
       <div class="search-box">
 
-        <span>🔎</span>
+        <span class="search-icon">🔎</span>
 
         <input
-          id="searchInput"
           type="search"
-          placeholder="ماذا تبحث عنه؟"
+          id="searchInput"
+          placeholder="ابحث عن منتج، محل، خدمة..."
           autocomplete="off"
         >
+
+        <button
+          id="clearSearch"
+          class="clear-search"
+          onclick="clearSearch()"
+          style="display:none;">
+          ✕
+        </button>
 
       </div>
 
     </section>
 
 
-    <!-- MAIN CONTENT -->
+    <!-- ================= MAIN ================= -->
     <main id="mainContent">
 
+
       <!-- HERO -->
-      <section class="hero">
+      <section class="hero-section">
 
         <div class="hero-content">
 
-          <span class="hero-badge">
-            🇩🇿 منصة محلية
+          <span class="hero-small">
+            🇩🇿 من منطقتك إلى كل الجزائر
           </span>
 
           <h2>
@@ -94,76 +103,95 @@
           </h2>
 
           <p>
-            اكتشف المنتجات والمحلات والخدمات القريبة منك بسهولة.
+            اكتشف المنتجات والمحلات والخدمات القريبة منك.
           </p>
 
-          <button class="hero-btn" id="exploreBtn">
-            ابدأ الاستكشاف
+          <button
+            class="hero-button"
+            onclick="openCategories()">
+            اكتشف الآن
             <span>←</span>
           </button>
 
         </div>
 
-        <div class="hero-emoji">
+        <div class="hero-decoration">
           🛍️
         </div>
 
       </section>
 
 
-      <!-- CATEGORIES -->
+      <!-- ================= CATEGORIES ================= -->
       <section class="section">
 
         <div class="section-header">
 
           <h2>التصنيفات</h2>
 
-          <button id="allCategoriesBtn">
+          <button onclick="openCategories()">
             عرض الكل
           </button>
 
         </div>
 
-        <div class="categories" id="categoriesContainer">
 
-          <button class="category-card" data-category="shopping">
-            <div>🛍️</div>
-            <span>تسوق</span>
+        <div class="category-grid">
+
+          <button
+            class="category-card"
+            onclick="openCategory('shopping')">
+            <span>🛍️</span>
+            <strong>تسوق</strong>
           </button>
 
-          <button class="category-card" data-category="food">
-            <div>🍔</div>
-            <span>مطاعم</span>
+          <button
+            class="category-card"
+            onclick="openCategory('food')">
+            <span>🍔</span>
+            <strong>مطاعم</strong>
           </button>
 
-          <button class="category-card" data-category="services">
-            <div>🔧</div>
-            <span>خدمات</span>
+          <button
+            class="category-card"
+            onclick="openCategory('services')">
+            <span>🔧</span>
+            <strong>خدمات</strong>
           </button>
 
-          <button class="category-card" data-category="transport">
-            <div>🚕</div>
-            <span>نقل</span>
+          <button
+            class="category-card"
+            onclick="openCategory('transport')">
+            <span>🚗</span>
+            <strong>نقل</strong>
           </button>
 
-          <button class="category-card" data-category="home">
-            <div>🏠</div>
-            <span>المنزل</span>
+          <button
+            class="category-card"
+            onclick="openCategory('home')">
+            <span>🏠</span>
+            <strong>المنزل</strong>
           </button>
 
-          <button class="category-card" data-category="beauty">
-            <div>💇</div>
-            <span>الجمال</span>
+          <button
+            class="category-card"
+            onclick="openCategory('beauty')">
+            <span>💄</span>
+            <strong>الجمال</strong>
           </button>
 
-          <button class="category-card" data-category="education">
-            <div>🎓</div>
-            <span>تعليم</span>
+          <button
+            class="category-card"
+            onclick="openCategory('education')">
+            <span>📚</span>
+            <strong>تعليم</strong>
           </button>
 
-          <button class="category-card" data-category="cars">
-            <div>🚗</div>
-            <span>سيارات</span>
+          <button
+            class="category-card"
+            onclick="openCategory('more')">
+            <span>➕</span>
+            <strong>المزيد</strong>
           </button>
 
         </div>
@@ -171,26 +199,25 @@
       </section>
 
 
-      <!-- QUICK ACTIONS -->
+      <!-- ================= QUICK ACTIONS ================= -->
       <section class="section">
 
         <div class="section-header">
-
           <h2>ماذا تريد أن تفعل؟</h2>
-
         </div>
+
 
         <div class="quick-actions">
 
-          <button class="action-card" id="buyerBtn">
+          <button
+            class="quick-card buyer-card"
+            onclick="openBuyerMenu()">
 
-            <div class="action-icon buyer-icon">
-              🛍️
-            </div>
+            <div class="quick-icon">🛍️</div>
 
             <div>
-              <strong>أبحث عن شيء</strong>
-              <span>منتجات ومحلات وخدمات</span>
+              <strong>أنا أبحث عن شيء</strong>
+              <span>منتجات، محلات وخدمات</span>
             </div>
 
             <b>←</b>
@@ -198,15 +225,15 @@
           </button>
 
 
-          <button class="action-card" id="sellerBtn">
+          <button
+            class="quick-card seller-card"
+            onclick="openSellerMenu()">
 
-            <div class="action-icon seller-icon">
-              🏪
-            </div>
+            <div class="quick-icon">🏪</div>
 
             <div>
-              <strong>افتح نشاطك</strong>
-              <span>متجر أو خدمة أو مشروع</span>
+              <strong>أريد بيع أو تقديم خدمة</strong>
+              <span>افتح نشاطك على سوق الصحاري</span>
             </div>
 
             <b>←</b>
@@ -218,22 +245,27 @@
       </section>
 
 
-      <!-- NEARBY -->
+      <!-- ================= NEARBY ================= -->
       <section class="section">
 
         <div class="section-header">
 
           <h2>قريب منك</h2>
 
-          <button id="nearbyBtn">
+          <button onclick="showNearby()">
             عرض الكل
           </button>
 
         </div>
 
-        <div class="business-list" id="businessList">
 
-          <article class="business-card">
+        <div id="businessList" class="business-list">
+
+
+          <!-- BUSINESS 1 -->
+          <article
+            class="business-card"
+            data-search="متجر الأناقة ملابس أزياء تسوق">
 
             <div class="business-image">
               👕
@@ -241,13 +273,15 @@
 
             <div class="business-info">
 
-              <div class="verified-row">
+              <div class="business-title-row">
 
                 <h3>متجر الأناقة</h3>
 
-                <span class="verified">
-                  ✓
-                </span>
+                <button
+                  class="favorite-btn"
+                  onclick="toggleFavorite(event,'store-1')">
+                  ♡
+                </button>
 
               </div>
 
@@ -256,19 +290,22 @@
               <div class="business-meta">
                 ⭐ 4.8
                 <span>•</span>
-                📍 0.8 كم
+                <span>📍 1.2 كم</span>
+              </div>
+
+              <div class="business-status open">
+                مفتوح الآن
               </div>
 
             </div>
 
-            <button class="favorite-btn">
-              ♡
-            </button>
-
           </article>
 
 
-          <article class="business-card">
+          <!-- BUSINESS 2 -->
+          <article
+            class="business-card"
+            data-search="مطعم الصحاري أكل طعام مطعم">
 
             <div class="business-image">
               🍔
@@ -276,34 +313,39 @@
 
             <div class="business-info">
 
-              <div class="verified-row">
+              <div class="business-title-row">
 
                 <h3>مطعم الصحاري</h3>
 
-                <span class="verified">
-                  ✓
-                </span>
+                <button
+                  class="favorite-btn"
+                  onclick="toggleFavorite(event,'restaurant-1')">
+                  ♡
+                </button>
 
               </div>
 
-              <p>مطاعم ووجبات سريعة</p>
+              <p>وجبات سريعة ومأكولات</p>
 
               <div class="business-meta">
                 ⭐ 4.7
                 <span>•</span>
-                📍 1.2 كم
+                <span>📍 2.1 كم</span>
+              </div>
+
+              <div class="business-status open">
+                مفتوح الآن
               </div>
 
             </div>
 
-            <button class="favorite-btn">
-              ♡
-            </button>
-
           </article>
 
 
-          <article class="business-card">
+          <!-- BUSINESS 3 -->
+          <article
+            class="business-card"
+            data-search="خدمات الصيانة تصليح كهرباء سباكة">
 
             <div class="business-image">
               🔧
@@ -311,29 +353,31 @@
 
             <div class="business-info">
 
-              <div class="verified-row">
+              <div class="business-title-row">
 
                 <h3>خدمات الصيانة</h3>
 
-                <span class="verified">
-                  ✓
-                </span>
+                <button
+                  class="favorite-btn"
+                  onclick="toggleFavorite(event,'service-1')">
+                  ♡
+                </button>
 
               </div>
 
-              <p>صيانة وإصلاح</p>
+              <p>كهرباء، سباكة وصيانة</p>
 
               <div class="business-meta">
                 ⭐ 4.9
                 <span>•</span>
-                📍 1.6 كم
+                <span>📍 3.4 كم</span>
+              </div>
+
+              <div class="business-status open">
+                متاح الآن
               </div>
 
             </div>
-
-            <button class="favorite-btn">
-              ♡
-            </button>
 
           </article>
 
@@ -342,91 +386,85 @@
       </section>
 
 
-      <!-- POSTS -->
+      <!-- ================= POSTS ================= -->
       <section class="section">
 
         <div class="section-header">
 
           <h2>آخر المنشورات</h2>
 
-          <button id="postsBtn">
+          <button onclick="showAllPosts()">
             عرض الكل
           </button>
 
         </div>
 
-        <div class="posts-container">
 
-          <article class="post-card">
+        <div class="posts-list">
 
-            <div class="post-header">
 
-              <div class="post-avatar">
-                👕
-              </div>
+          <article
+            class="post-card"
+            onclick="openPost('post-1')">
 
-              <div>
-                <strong>متجر الأناقة</strong>
-                <small>منذ ساعتين</small>
-              </div>
-
+            <div class="post-image">
+              👕
             </div>
 
             <div class="post-content">
+
+              <div class="post-user">
+                <span>🏪</span>
+                <strong>متجر الأناقة</strong>
+              </div>
 
               <h3>
                 وصلتنا تشكيلة جديدة 🔥
               </h3>
 
               <p>
-                اكتشف أحدث الملابس والأزياء بأسعار مناسبة.
+                اكتشف أحدث الملابس والأزياء.
               </p>
 
-            </div>
-
-            <div class="post-actions">
-
-              <button>♡ إعجاب</button>
-              <button>💬 تعليق</button>
-              <button>↗ مشاركة</button>
+              <div class="post-footer">
+                ❤️ 24
+                💬 6
+                🔗 مشاركة
+              </div>
 
             </div>
 
           </article>
 
 
-          <article class="post-card">
+          <article
+            class="post-card"
+            onclick="openPost('post-2')">
 
-            <div class="post-header">
-
-              <div class="post-avatar">
-                🍔
-              </div>
-
-              <div>
-                <strong>مطعم الصحاري</strong>
-                <small>منذ 4 ساعات</small>
-              </div>
-
+            <div class="post-image">
+              🍔
             </div>
 
             <div class="post-content">
+
+              <div class="post-user">
+                <span>🍔</span>
+                <strong>مطعم الصحاري</strong>
+              </div>
 
               <h3>
                 عرض اليوم 🔥
               </h3>
 
               <p>
-                وجبة خاصة اليوم بسعر مميز.
+                وجبة خاصة بسعر مميز.
               </p>
 
-            </div>
-
-            <div class="post-actions">
-
-              <button>♡ إعجاب</button>
-              <button>💬 تعليق</button>
-              <button>↗ مشاركة</button>
+              <div class="post-footer">
+                ❤️ 31
+                💬 9
+                🔗 مشاركة
+              </div>
 
             </div>
 
@@ -436,40 +474,72 @@
 
       </section>
 
+
+      <!-- ================= EMPTY SEARCH ================= -->
+      <section
+        id="searchEmpty"
+        class="search-empty"
+        style="display:none;">
+
+        <div>🔎</div>
+
+        <h3>لم نجد نتائج</h3>
+
+        <p>
+          جرّب البحث باسم منتج أو محل أو خدمة أخرى.
+        </p>
+
+      </section>
+
     </main>
 
 
-    <!-- BOTTOM NAVIGATION -->
+    <!-- ================= BOTTOM NAVIGATION ================= -->
     <nav class="bottom-nav">
 
-      <button class="nav-item active" data-page="home">
+      <button
+        class="nav-item active"
+        onclick="goHome()">
 
         <span>⌂</span>
         <small>الرئيسية</small>
 
       </button>
 
-      <button class="nav-item" data-page="search">
+
+      <button
+        class="nav-item"
+        onclick="openExplore()">
 
         <span>🔎</span>
-        <small>بحث</small>
+        <small>استكشاف</small>
 
       </button>
 
-      <button class="nav-item create-btn" data-page="create">
+
+      <button
+        class="nav-item create-button"
+        onclick="openCreateMenu()">
 
         <span>＋</span>
+        <small>إنشاء</small>
 
       </button>
 
-      <button class="nav-item" data-page="favorites">
+
+      <button
+        class="nav-item"
+        onclick="openFavorites()">
 
         <span>♡</span>
         <small>المفضلة</small>
 
       </button>
 
-      <button class="nav-item" data-page="profile">
+
+      <button
+        class="nav-item"
+        onclick="openProfile()">
 
         <span>👤</span>
         <small>حسابي</small>
@@ -478,29 +548,45 @@
 
     </nav>
 
+  </div>
 
-    <!-- MODAL -->
-    <div class="modal" id="modal">
 
-      <div class="modal-overlay" id="modalOverlay"></div>
+  <!-- ================= MODAL ================= -->
+  <div
+    id="modal"
+    class="modal"
+    onclick="closeModalOutside(event)">
 
-      <div class="modal-content">
+    <div
+      id="modalContent"
+      class="modal-content">
 
-        <button class="close-modal" id="closeModal">
-          ×
-        </button>
+      <button
+        class="modal-close"
+        onclick="closeModal()">
+        ✕
+      </button>
 
-        <div id="modalBody"></div>
-
-      </div>
+      <div id="modalBody"></div>
 
     </div>
 
   </div>
 
 
-  <!-- JAVASCRIPT -->
+  <!-- ================= TOAST ================= -->
+  <div
+    id="toast"
+    class="toast">
+  </div>
 
+
+  <!-- ================= SUPABASE ================= -->
+
+  <!-- مكتبة Supabase -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <!-- ملف التطبيق -->
   <script src="app.js"></script>
 
 </body>
